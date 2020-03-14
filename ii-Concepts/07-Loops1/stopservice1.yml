@@ -12,8 +12,8 @@
   tasks:
    - name: Stop all services
      win_service:
-       name: "{{ item }}"
-       state: stopped
+       name: "{{ item.name }}"
+       state: "{{ item.status }}"
      loop: "{{services}}"
      tags: ansibleloop
 
