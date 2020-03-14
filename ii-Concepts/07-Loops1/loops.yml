@@ -1,0 +1,32 @@
+---
+-
+  hosts: all
+  gather_facts: true # this will make not to gather facts before running tasks
+
+  vars: Services
+         - { name: 'Bits', status: 'stopped' }
+         - { name: 'windowupdate', status: 'running' }
+         - { name: 'dnscache', status: 'running' }
+  tasks: 
+    - name: Service
+      win_service:
+      
+      loop:
+           - dinesh
+           - basant
+      when: ansible_distribution == "Microsoft Windows Server Datacenter"
+
+    
+
+# you can also use
+# loop:
+#    - {name: 'Dinesh' , company: 'Generalmills'} You can call this by item.name and item.company 
+
+...
+
+
+# use same looping to stop the BITS and dhcp service
+
+
+
+
