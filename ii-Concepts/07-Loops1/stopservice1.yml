@@ -6,8 +6,8 @@
   vars: 
    services:
         - { name: 'Bits', status: 'stopped' }
-        - { name: 'windowupdate', status: 'running' }
-        - { name: 'dnscache', status: 'running' }
+        - { name: 'windowupdate', status: 'started' }
+        - { name: 'dnscache', status: 'started' }
 
   tasks:
    - name: Stop all services
